@@ -32,7 +32,7 @@
         $("audio").attr("src", urlParams.get('audio'));
 
 
-        fetch('https://raw.githubusercontent.com/5he1n/Alerts/master/MGBerg/xmasResub.json')
+        fetch('https://raw.githubusercontent.com/5he1n/Alerts/master/MGBerg/'+urlParams.get('theme')+'.json')
             .then(res => res.json())
             .then((animationData) => {
                 var txtWidth, txtFont;
@@ -40,6 +40,10 @@
                 animationData.layers[1].t.d.k[0].s.t = name;
 
                 $("#effects").prop('muted', true);
+                
+                if (urlParams.get('amount')) {
+                    animationData.layers[2].t.d.k[0].s.t = "продлевает аренду\rуже "+ urlParams.get('amount') +" месяц!";
+                }
 
                 txtFont = '190px ' + animationData.layers[1].t.d.k[0].s.f;
                 txtWidth = getTextWidth(name, txtFont);
@@ -65,6 +69,14 @@
                     anim.play(); 
                     $("#effects")[0].play();
                 });
+
+                if (urlParams.get('amount')) {
+                    var regex = new RegExp("[0-9]"); //Change amount color on the go
+                    
+                    $("#Message span").filter(function () {
+                        return regex.test($(this).text());
+                    }).css('color', $("#Name").css("color"));
+                }
             });
     </script>
 </html>
