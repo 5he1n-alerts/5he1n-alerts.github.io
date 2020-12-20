@@ -3,12 +3,19 @@
 
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
+    
+    <body>
+        <div id="divID">
+
+        </div>
+    </body>
     <script>
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
 
-        console.log(urlParams.get('name'));
+        
+        var div = document.getElementById('divID');
+
+        div.innerHTML += urlParams.get('name');
     </script>
-    <body>
-    </body>
 </html>
