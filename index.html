@@ -6,7 +6,7 @@
         <audio></audio>
 
         <video id="effects" >
-            <source type="video/webm">
+            <source id="sourceID" type="video/webm">
         </video>
     </body>
 
@@ -26,7 +26,7 @@
         
         var name = urlParams.get('name');
 
-        $("source").attr("src", urlParams.get('video'));
+        $("#sourceID").attr("src", urlParams.get('video'));
         $("audio").attr("src", urlParams.get('audio'));
 
 
