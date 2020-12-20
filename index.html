@@ -5,10 +5,6 @@
 
     <body>
         <div id="lottie"></div>
-
-        <video id="effects" >
-            <source id="sourceID" type="video/webm">
-        </video>
     </body>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
@@ -27,8 +23,7 @@
         
         var name = urlParams.get('name');
 
-        $("#sourceID").attr("src", urlParams.get('video'));
-
+        $('<video id="effects" ><source src="'+urlParams.get('video')+'" type="video/webm"></video>').appendTo('body');
 
         fetch('https://raw.githubusercontent.com/5he1n/Alerts/master/MGBerg/'+urlParams.get('theme')+'.json')
             .then(res => res.json())
