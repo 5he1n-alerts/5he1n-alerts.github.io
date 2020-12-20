@@ -1,21 +1,58 @@
 <!DOCTYPE html>
     <html>
-
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
     
     <body>
-        <div id="divID">
+        <div id="lottie"></div>
+        <audio src='{audio}'></audio>
 
-        </div>
+        <video id="effects" >
+            <source src="{video}" type="video/webm">
+        </video>
     </body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
     <script>
+         function getTextWidth(text, font){
+            var canvas = getTextWidth.canvas || (getTextWidth.canvas = document.createElement("canvas"));
+            var context = canvas.getContext("2d");
+            context.font = font;
+            var metrics = context.measureText(text);
+            return metrics.width;
+        }
+
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
-
         
-        var div = document.getElementById('divID');
+        var name = urlParams.get('name');
 
-        div.innerHTML += urlParams.get('name');
+        $("source").attr("src", urlParams.get('video'));
+        $("audio").attr("src", urlParams.get('audio'));
+
+
+        fetch('https://raw.githubusercontent.com/5he1n/Alerts/master/MGBerg/xmasResub.json')
+            .then(res => res.json())
+            .then((animationData) => {
+                var txtWidth, txtFont;
+
+                animationData.layers[1].t.d.k[0].s.t = name;
+
+                $("#effects").prop('muted', true);
+            
+                var anim = bodymovin.loadAnimation({
+                    container: document.getElementById('lottie'),
+                    renderer: 'html',
+                    loop: false,
+                    autoplay: false,
+                    animationData: animationData,
+                    rendererSettings: {
+                        className: "main"
+                    }
+                });
+                
+                anim.addEventListener('DOMLoaded', function() { 
+                    anim.play(); 
+                    $("#effects")[0].play();
+                });
+            });
     </script>
 </html>
