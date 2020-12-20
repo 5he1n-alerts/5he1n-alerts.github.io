@@ -1,5 +1,13 @@
-@import url('https://firebasestorage.googleapis.com/v0/b/dev5he1n.appspot.com/o/mgberg%2Ffonts.css?alt=media');
+@font-face {
+    font-family: 'vinqueregular';
+    src: url('https://raw.githubusercontent.com/5he1n/Alerts/master/MGBerg/vinque_rg.woff2');
+}
 
+@font-face {
+    font-family: 'Pangolin';
+    font-weight: bold;
+    src: url('https://db.onlinewebfonts.com/t/273e546065967187adef5a138fb7c95d.woff2');
+}
 body {
     height: 100vh;
     width: 100vw;
