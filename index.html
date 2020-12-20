@@ -41,7 +41,7 @@
 
                 $("#effects").prop('muted', true);
                 
-                if (urlParams.get('amount')) {
+                if (urlParams.get('amount')!='1') {
                     animationData.layers[2].t.d.k[0].s.t = "продлевает аренду\rуже "+ urlParams.get('amount') +" месяц!";
                 }
 
@@ -70,7 +70,7 @@
                     $("#effects")[0].play();
                 });
 
-                if (urlParams.get('amount')) {
+                if (urlParams.get('amount')!='1') {
                     var regex = new RegExp("[0-9]"); //Change amount color on the go
                     
                     $("#Message span").filter(function () {
