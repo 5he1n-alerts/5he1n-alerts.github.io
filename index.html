@@ -5,7 +5,6 @@
 
     <body>
         <div id="lottie"></div>
-        <audio></audio>
 
         <video id="effects" >
             <source id="sourceID" type="video/webm">
@@ -29,7 +28,6 @@
         var name = urlParams.get('name');
 
         $("#sourceID").attr("src", urlParams.get('video'));
-        $("audio").attr("src", urlParams.get('audio'));
 
 
         fetch('https://raw.githubusercontent.com/5he1n/Alerts/master/MGBerg/'+urlParams.get('theme')+'.json')
