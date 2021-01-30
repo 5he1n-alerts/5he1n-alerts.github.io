@@ -26,9 +26,14 @@ body {
     white-space: pre-wrap;
 }
 
-main{
+xmasSub, xmasResub{
     font-family: 'Pangolin';
     -webkit-text-stroke: 8px rgba(0, 0, 0, 0.61);
+}
+
+newClassicSub, newClassicResub{
+    font-family: 'vinqueregular';
+    -webkit-text-stroke: 10px rgba(0, 0, 0, 0.61);
 }
 
 #effects{
