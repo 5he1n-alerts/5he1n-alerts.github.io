@@ -26,7 +26,7 @@ body {
     white-space: pre-wrap;
 }
 
-.xmasSub span, .xmasResub span{
+.xmas span{
     font-family: 'Pangolin';
     -webkit-text-stroke: 8px rgba(0, 0, 0, 0.61);
 }
