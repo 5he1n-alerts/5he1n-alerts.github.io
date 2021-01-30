@@ -26,12 +26,12 @@ body {
     white-space: pre-wrap;
 }
 
-.xmasSub, .xmasResub span{
+.xmasSub span, .xmasResub span{
     font-family: 'Pangolin';
     -webkit-text-stroke: 8px rgba(0, 0, 0, 0.61);
 }
 
-.newClassicSub, .newClassicResub span{
+.newClassicSub span, .newClassicResub span{
     font-family: 'vinqueregular';
     -webkit-text-stroke: 8px rgba(0, 0, 0, 0.61);
 }
