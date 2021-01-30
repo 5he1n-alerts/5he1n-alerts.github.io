@@ -27,7 +27,8 @@ body {
 }
 
 span{
-  -webkit-text-stroke: 8px rgba(0, 0, 0, 0.61);
+    font-family: 'Pangolin';
+    -webkit-text-stroke: 8px rgba(0, 0, 0, 0.61);
 }
 
 #effects{
